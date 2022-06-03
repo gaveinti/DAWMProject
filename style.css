@@ -74,6 +74,7 @@ header{
   max-height: 70%;
   border: 1px solid black;
   line-height: 60px;
+  box-shadow: 1px 1px 5px 5px  #f4d50b;
 }
 #SubTitle{
   padding-left: 2%;
@@ -88,36 +89,67 @@ h1{
 .profile{
   position: relative;  
 }
-
 #Anime{
-  width: 10rem;
-  heigth: 50px;
-  top: 40px;
+  width: 20rem;
+  heigth: 200rem;
+  top: 27px;
   position: absolute;
   border-radius: 10%;
-  margin-left: 50%;
+  margin-left: 20%;
 }
 #ProfilePic{
   width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  height: 150px;
+  border-radius: 20%;
   position: absolute;
   top: 40px;
+  margin-left: 33%;
   box-shadow: 2px 2px 5px #050505
 }
 
+.description{
+  position: relative;
+}
+#Paint{
+  width: 300px;
+  height: 150px;
+  float: right;
+}
 #descpr{
+  position: absolute;
+  float: left;
+  padding-right: 20%;
   text-align: left;
+  background-color: transparent;
   color: white;
   line-height: 25pt;
+  font-size: 18px;
 }
 
 .socialI{
   color: #787878;
   transition: color0.2s;
   font-size: 30px;
-  
+}
+.social-media{
+  margin-left: 15%;
+  padding-top: 5%;
 }
 .socialI:hover{
   color:#ff7700;
+}
+
+
+#codeIcon {
+  font-size: 36px;
+  margin-top: 10%;
+  margin-left: 45%;
+  color: rgb(255, 141, 41);
+}
+#scroll-Text{
+  font-size: 20px;
+  color: rgb(255, 141, 41);
+  float:right;
+  margin-top: 11%;
+  margin-right: 10%;
 }
