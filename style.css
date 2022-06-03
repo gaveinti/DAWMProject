@@ -1,0 +1,83 @@
+html, body {
+  
+}
+*{
+  background-color: rgb(37, 29, 58);
+  font-family: 'Quicksand', sans-serif;
+}
+.container{
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+h1{
+  text-align: center;
+}
+li{
+  float:left;
+  list-style: none;
+  padding:10px;
+  margin-left: 35px;
+}
+header{
+  background-color:rgb(42, 37, 80);
+  border: 1pt solid black;
+  max_width: 100%;
+}
+#Profile #ProfilePic:hover{
+  box-shadow: 0px 50px 75px -25px #ad3500 !important;
+  top: 1px !important;
+}
+
+.rectangle{
+  float: right;
+  background:#ffffff;
+  margin-right: 30px;
+  border: 2px solid #ff8d29;
+
+}
+#FirstI{
+  width: 150px;
+  margin-top:10px;
+  margin-left:25px;
+  background-color: rgb(42, 37, 80);
+}
+#Title{
+  margin-right:30%;
+  margin-top:5%;
+  color:white;
+  font-family:courier;
+  background-color: rgb(42, 37, 80);
+  text-align: center;
+  width: 50%;
+}
+#SubTitle{
+  padding-left: 2%;
+  color: white;
+  background-color: rgb(42, 37, 80);
+}
+h1{
+  float:right;
+}
+.anime{
+  widht: 100px;
+  height: 200px;
+  border-radius: 10%;
+}
+.ProfileP{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  top: 40px;
+  left: 120px;
+  box-shadow: 2px 2px 5px #050505
+}
+.socialI{
+  color: #787878;
+  transition: color0.2s;
+  font-size: 30px;
+  
+}
+.socialI:hover{
+  color:#ff7700;
+}
