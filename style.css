@@ -1,5 +1,27 @@
-html, body {
+html{
   
+}
+body .content{
+  display: grid;
+  grid-template-columns: 48% 50%;
+  row-gap: 27px;
+  column-gap: 11px; 
+  grid-template-areas: 
+    "r11 r12"
+    "r21 r22"
+}
+
+.content .profile{
+  grid-area: r11;
+}
+.content .description{
+  grid-area: r12;
+}
+.content .social-media{
+  grid-area: r21;
+}
+.content .scroll{
+  grid-area: r22;
 }
 *{
   background-color: rgb(37, 29, 58);
@@ -27,13 +49,13 @@ header{
   box-shadow: 0px 50px 75px -25px #ad3500 !important;
   top: 1px !important;
 }
-
-.rectangle{
-  float: right;
-  background:#ffffff;
-  margin-right: 30px;
-  border: 2px solid #ff8d29;
-
+#Code{
+  width: 100px;
+  hight: 250px;
+  margin-top:20px;
+  margin-right: 15px;
+  background-color: rgb(42, 37, 80);
+  margin-left: 100px;
 }
 #FirstI{
   width: 150px;
@@ -42,13 +64,16 @@ header{
   background-color: rgb(42, 37, 80);
 }
 #Title{
-  margin-right:30%;
-  margin-top:5%;
+  margin-right:20%;
+  margin-top: 3%;
   color:white;
   font-family:courier;
-  background-color: rgb(42, 37, 80);
+  background-color: rgb(224, 77, 1);
   text-align: center;
-  width: 50%;
+  width: 25%;
+  max-height: 70%;
+  border: 1px solid black;
+  line-height: 60px;
 }
 #SubTitle{
   padding-left: 2%;
@@ -58,20 +83,35 @@ header{
 h1{
   float:right;
 }
-.anime{
-  widht: 100px;
-  height: 200px;
-  border-radius: 10%;
+
+
+.profile{
+  position: relative;  
 }
-.ProfileP{
+
+#Anime{
+  width: 10rem;
+  heigth: 50px;
+  top: 40px;
+  position: absolute;
+  border-radius: 10%;
+  margin-left: 50%;
+}
+#ProfilePic{
   width: 120px;
   height: 120px;
   border-radius: 50%;
   position: absolute;
   top: 40px;
-  left: 120px;
   box-shadow: 2px 2px 5px #050505
 }
+
+#descpr{
+  text-align: left;
+  color: white;
+  line-height: 25pt;
+}
+
 .socialI{
   color: #787878;
   transition: color0.2s;
