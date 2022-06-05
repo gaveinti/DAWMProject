@@ -9,6 +9,7 @@ body .content{
   grid-template-areas: 
     "r11 r12"
     "r21 r22"
+    "r31 r32" 
 }
 
 .content .profile{
@@ -22,6 +23,12 @@ body .content{
 }
 .content .scroll{
   grid-area: r22;
+}
+.content .division11{
+  grid-area: r31;
+}
+.content .division12{
+  grid-area: r32;
 }
 *{
   background-color: rgb(37, 29, 58);
@@ -152,4 +159,12 @@ h1{
   float:right;
   margin-top: 11%;
   margin-right: 10%;
+}
+
+#soccerIcon{
+  margin-top: -5%;
+  font-size: 60px;
+  float: right;
+  margin-right: -6%;
+  color: rgb(255, 141, 41);
 }
