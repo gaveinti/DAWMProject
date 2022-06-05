@@ -4,12 +4,14 @@ html{
 body .content{
   display: grid;
   grid-template-columns: 48% 50%;
+  grid-template-rows: 30% 30% 5% 20%;
   row-gap: 27px;
   column-gap: 11px; 
   grid-template-areas: 
     "r11 r12"
     "r21 r22"
     "r31 r32" 
+    "r41 r42"
 }
 
 .content .profile{
@@ -30,6 +32,12 @@ body .content{
 .content .division12{
   grid-area: r32;
 }
+.content .fFT{
+  grid-area: r41;
+}
+.content .fFI{
+  grid-area: r42;
+}
 *{
   background-color: rgb(37, 29, 58);
   font-family: 'Quicksand', sans-serif;
@@ -41,7 +49,7 @@ body .content{
 h1{
   text-align: center;
 }
-li{
+ul.socialMediaList li{
   float:left;
   list-style: none;
   padding:10px;
@@ -167,4 +175,26 @@ h1{
   float: right;
   margin-right: -6%;
   color: rgb(255, 141, 41);
+}
+
+.fFT{
+  place-self: center;
+  margin-top: 10%;
+  border-color: rgb(255, 73, 73);
+}
+.fFT h2{
+  color: white;
+}
+.fFT ul.fFood{
+  color: white;
+  font-size: 30px;
+}
+.fFI{
+  place-self: center;
+}
+#foodIcon{
+  margin-top: 5%; 
+  font-size: 250px;
+  color: rgb(255, 141, 41);
+  
 }
