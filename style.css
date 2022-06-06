@@ -1,6 +1,7 @@
 html{
   
 }
+
 body .content{
   display: grid;
   grid-template-columns: 48% 50%;
@@ -198,3 +199,9 @@ h1{
   color: rgb(255, 141, 41);
   
 }
+
+
+
+
+
+
