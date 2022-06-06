@@ -6,15 +6,14 @@ body .content{
   display: grid;
   grid-template-columns: 48% 50%;
   grid-template-rows: 30% 30% 5% 20%;
-  row-gap: 27px;
-  column-gap: 11px; 
+  row-gap: 20%;
+  column-gap: 11%; 
   grid-template-areas: 
     "r11 r12"
     "r21 r22"
     "r31 r32" 
     "r41 r42"
 }
-
 .content .profile{
   grid-area: r11;
 }
@@ -43,6 +42,10 @@ body .content{
   background-color: rgb(37, 29, 58);
   font-family: 'Quicksand', sans-serif;
 }
+img{
+  width: 100%;
+  height: auto;
+}
 .container{
   max-width: 100% !important;
   overflow-x: hidden !important;
@@ -53,8 +56,8 @@ h1{
 ul.socialMediaList li{
   float:left;
   list-style: none;
-  padding:10px;
-  margin-left: 35px;
+  padding:3%;
+  margin-left: 4%;
 }
 header{
   background-color:rgb(42, 37, 80);
@@ -66,31 +69,37 @@ header{
   top: 1px !important;
 }
 #Code{
-  width: 100px;
-  hight: 250px;
-  margin-top:20px;
-  margin-right: 15px;
+  width: 7%;
+  float: right;
+  margin-top: -5%;
+  margin-right: 2%;
+  margin-left: 60%;
+}
+#Code #codeI{
   background-color: rgb(42, 37, 80);
-  margin-left: 100px;
 }
 #FirstI{
-  width: 150px;
-  margin-top:10px;
-  margin-left:25px;
+  width: 7%;
+  margin-top:3%;
+  margin-left: 2%;
+}
+#FirstI #triangleI{
   background-color: rgb(42, 37, 80);
 }
 #Title{
   margin-right:20%;
   margin-top: 3%;
-  color:white;
-  font-family:courier;
   background-color: rgb(224, 77, 1);
-  text-align: center;
-  width: 25%;
-  max-height: 70%;
-  border: 1px solid black;
+  width: 100%;
+  height: auto;
+  border: 1% solid black;
   line-height: 60px;
   box-shadow: 1px 1px 5px 5px  #f4d50b;
+}
+#Title #titleI{
+  font-color:white;
+  font-family:courier;
+  text-align: center;
 }
 #SubTitle{
   padding-left: 2%;
@@ -195,7 +204,7 @@ h1{
 }
 #foodIcon{
   margin-top: 5%; 
-  font-size: 250px;
+  font-size: 600%;
   color: rgb(255, 141, 41);
   
 }
