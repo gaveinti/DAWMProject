@@ -2,42 +2,6 @@ html{
   
 }
 
-body .content{
-  display: grid;
-  grid-template-columns: 48% 50%;
-  grid-template-rows: 30% 30% 5% 20%;
-  row-gap: 20%;
-  column-gap: 11%; 
-  grid-template-areas: 
-    "r11 r12"
-    "r21 r22"
-    "r31 r32" 
-    "r41 r42"
-}
-.content .profile{
-  grid-area: r11;
-}
-.content .description{
-  grid-area: r12;
-}
-.content .social-media{
-  grid-area: r21;
-}
-.content .scroll{
-  grid-area: r22;
-}
-.content .division11{
-  grid-area: r31;
-}
-.content .division12{
-  grid-area: r32;
-}
-.content .fFT{
-  grid-area: r41;
-}
-.content .fFI{
-  grid-area: r42;
-}
 *{
   background-color: rgb(37, 29, 58);
   font-family: 'Quicksand', sans-serif;
@@ -64,10 +28,7 @@ header{
   border: 1pt solid black;
   max_width: 100%;
 }
-#Profile #ProfilePic:hover{
-  box-shadow: 0px 50px 75px -25px #ad3500 !important;
-  top: 1px !important;
-}
+
 #Code{
   width: 7%;
   float: right;
@@ -82,25 +43,20 @@ header{
   width: 7%;
   margin-top:3%;
   margin-left: 2%;
+  background-color: rgb(42, 37, 80);
+  
 }
 #FirstI #triangleI{
   background-color: rgb(42, 37, 80);
 }
-.title{
-  width: 20%;
-  height: 50%;
-  background-color: rgb(224, 77, 1);
-  margin-left:40%;
-  margin-top: 3%;
-  box-shadow: 1px 1px 5px 5px  #f4d50b;
-}
 #titleT{
-  margin-left:20%;
-  width: 50%;
+  margin-top: -5%;
+  margin-right: 34%;
+  width: 30%;
   height: auto;
   color:white;
   background-color: rgb(224, 77, 1);
-  
+  box-shadow: 1px 1px 5px 5px  #f4d50b;
   font-family:courier;
   text-align: center;
 }
@@ -113,37 +69,45 @@ h1{
   float:right;
 }
 
-
+#ProfileI #ProfilePic:hover{
+  box-shadow: 0% 50% 50% -25% #ad3500 !important;
+  top: 1px !important;
+}
 .profile{
   position: relative;  
 }
+.content #ProfileI{
+  width: 45%;
+  margin-left: 20%;
+
+}
 #Anime{
-  width: 20rem;
-  heigth: 200rem;
-  top: 27px;
+  top: 10%;
   position: absolute;
   border-radius: 10%;
   margin-left: 20%;
+  box-shadow: 5px 5px 5px 5px #2f2465;
+  
 }
-#ProfilePic{
-  width: 120px;
-  height: 150px;
+#ProfileI #ProfilePic{
+  width: 40%;
+  height: auto;
   border-radius: 20%;
   position: absolute;
-  top: 40px;
-  margin-left: 33%;
-  box-shadow: 2px 2px 5px #050505
+  margin-top: 10%;
+  margin-left: 50%;
+  box-shadow: 1% 1% 2% #050505
+  background: transparent;
 }
 
 .description{
   position: relative;
 }
-#Paint{
-  width: 300px;
-  height: 150px;
+.description #Paint{
   float: right;
+  width: 50%;
 }
-#descpr{
+.description #descpr{
   position: absolute;
   float: left;
   padding-right: 20%;
@@ -157,11 +121,10 @@ h1{
 .socialI{
   color: #787878;
   transition: color0.2s;
-  font-size: 30px;
+  font-size: 250%;
 }
 .social-media{
-  margin-left: 15%;
-  padding-top: 5%;
+  margin-left: 28%;
 }
 .socialI:hover{
   color:#ff7700;
@@ -169,8 +132,8 @@ h1{
 
 
 #codeIcon {
-  font-size: 36px;
-  margin-top: 10%;
+  font-size: 200%;
+  margin-top: 5%;
   margin-left: 45%;
   color: rgb(255, 141, 41);
 }
@@ -178,15 +141,16 @@ h1{
   font-size: 20px;
   color: rgb(255, 141, 41);
   float:right;
-  margin-top: 11%;
-  margin-right: 10%;
+  margin-top: 5%;
+  margin-right: 14%;
 }
+
 
 #soccerIcon{
   margin-top: -5%;
-  font-size: 60px;
+  font-size: 400%;
   float: right;
-  margin-right: -6%;
+  margin-right: -9.5%;
   color: rgb(255, 141, 41);
 }
 
@@ -207,11 +171,26 @@ h1{
 }
 #foodIcon{
   margin-top: 5%; 
-  font-size: 600%;
+  font-size: 1020%;
   color: rgb(255, 141, 41);
   
 }
 
+
+.myLocationI #mapIcon{
+  margin-top: 20%; 
+  margin-left: 50%;
+  font-size: 1020%;
+  color: rgb(255, 141, 41);
+}
+
+.myLocationM #locationText{
+  color: white;
+  text-align: center;
+}
+.myLocationM .mapouter{
+  margin-left: 20%;
+}
 
 
 

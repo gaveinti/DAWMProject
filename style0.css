@@ -1,0 +1,50 @@
+body .content{
+  display: grid;
+  grid-template-columns: 48% 50%;
+  grid-template-rows: 30% 10% 5% 40% 40% 30%;
+  row-gap: 3%;
+  column-gap: 5%; 
+  grid-template-areas: 
+    "r11 r12"
+    "r21 r22"
+    "r31 r32" 
+    "r41 r42"
+    "r51 r52"
+    "r61 r62"
+}
+.content .profile{
+  grid-area: r11;
+}
+.content .description{
+  grid-area: r12;
+}
+.content .social-media{
+  grid-area: r21;
+}
+.content .scroll{
+  grid-area: r22;
+}
+.content .division11{
+  grid-area: r31;
+}
+.content .division12{
+  grid-area: r32;
+}
+.content .fFT{
+  grid-area: r41;
+}
+.content .fFI{
+  grid-area: r42;
+}
+.content .myLocationI{
+  grid-area: r51;
+}
+.content .myLocationM{
+  grid-area: r52;
+}
+.content .myTableT{
+  grid-area: r61;
+}
+.content .myTableI{
+  grid-area: r62;
+}
