@@ -234,4 +234,10 @@ caption{
   controls: yes;
 }
 
-
+#xboxIcon{
+  margin-top: -5%;
+  font-size: 400%;
+  float: right;
+  margin-right: -9.5%;
+  color: rgb(255, 141, 41);
+}
