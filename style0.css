@@ -1,16 +1,15 @@
 body .content{
   display: grid;
   grid-template-columns: 48% 50%;
-  grid-template-rows: 30% 10% 5% 40% 40% 30%;
-  row-gap: 3%;
+  grid-template-rows: 7fr 5fr 1fr 10fr 8fr;
+  row-gap: 1%;
   column-gap: 5%; 
   grid-template-areas: 
     "r11 r12"
     "r21 r22"
     "r31 r32" 
     "r41 r42"
-    "r51 r52"
-    "r61 r62"
+    "r51 r52";
 }
 .content .profile{
   grid-area: r11;
@@ -42,9 +41,31 @@ body .content{
 .content .myLocationM{
   grid-area: r52;
 }
-.content .myTableT{
-  grid-area: r61;
+
+body .myTable{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1%; 
+  grid-template-areas: 
+    "t1 t2"
 }
-.content .myTableI{
-  grid-area: r62;
+.myTable .myTableT{
+  grid-area: t1;
+}
+.myTable .myTableI{
+  grid-area: t2;
+}
+
+body .myMusic{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1%; 
+  grid-template-areas: 
+    "m1 m2"
+}
+.myTable .myMusicI{
+  grid-area: m1;
+}
+.myTable .myMusicV{
+  grid-area: m2;
 }

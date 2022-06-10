@@ -1,4 +1,11 @@
-html{
+html, body{
+  overflow-x: hidden;
+  max-width: 100%;
+  margin: 0;
+  height: 100%;
+}
+html body .content{  
+  height: auto;
   
 }
 
@@ -10,10 +17,7 @@ img{
   width: 100%;
   height: auto;
 }
-.container{
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-}
+
 h1{
   text-align: center;
 }
@@ -134,7 +138,7 @@ h1{
 #codeIcon {
   font-size: 200%;
   margin-top: 5%;
-  margin-left: 45%;
+  margin-left: 42%;
   color: rgb(255, 141, 41);
 }
 #scroll-Text{
@@ -156,7 +160,7 @@ h1{
 
 .fFT{
   place-self: center;
-  margin-top: 10%;
+  margin-top: 2%;
   border-color: rgb(255, 73, 73);
 }
 .fFT h2{
@@ -193,6 +197,41 @@ h1{
 }
 
 
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: white;
+}
+#Tabla1{
+  margin-left: 30%;
+  margin-top: 20%;
+}
+#tableIcon{
+  margin-top: 20%;
+  margin-left: 50%; 
+  font-size: 1020%;
+  color: rgb(255, 141, 41);
+}
+caption{
+  color: white;
+}
 
+
+#musicIcon{
+  margin-top: 20%; 
+  margin-left: 50%;
+  font-size: 1020%;
+  color: rgb(255, 141, 41);
+}
+
+
+
+#video{
+  margin-top: 15%;
+  margin-left: 40%;
+  width: 50%;
+  height: 70%;
+  controls: yes;
+}
 
 
