@@ -158,6 +158,10 @@ h1{
   color: rgb(255, 141, 41);
 }
 
+
+
+
+
 .fFT{
   place-self: center;
   margin-top: 2%;
@@ -233,6 +237,47 @@ caption{
   height: 70%;
   controls: yes;
 }
+
+
+.curiousFacts .card {
+  height: 15%;
+  width: 50%;
+  background: white;
+  border-radius: 5%;
+  box-shadow: 0px 30px 50px -25px #ad3500;
+  position: relative;
+  transition: all 0.3s ease;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.card:hover {
+  box-shadow: 0 0px 75px -25px #ad3500 !important;
+  top: -20px !important;
+}
+#factsTitle{
+  
+  color: rgb(255, 141, 41);
+  font-size: 30px;
+  margin-left: 40%;
+}
+.curiousFacts .card .content{
+  color: white;
+}
+.curiousFacts .fact2 .card{
+  margin-top: 2%;
+  margin-left: 20%;
+}
+.curiousFacts .fact1 .card{
+  margin-left: 15%;
+}
+
+
+
+
+
+
+
 
 #xboxIcon{
   margin-top: -5%;

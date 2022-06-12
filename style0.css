@@ -44,6 +44,23 @@ body .firstDiv{
 }
 
 
+body .curiousFacts{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1%; 
+  grid-template-areas: 
+    "cd1 cd2"
+}
+.curiousFacts .fact1{
+  grid-area: cd1;
+}
+.curiousFacts .fact2{
+  grid-area: cd2;
+}
+
+
+
+
 body .favFood{
   display: grid;
   grid-template-columns: 1fr 1fr;
