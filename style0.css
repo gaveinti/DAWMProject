@@ -1,46 +1,78 @@
-body .content{
+
+body .profileInfo{
   display: grid;
-  grid-template-columns: 48% 50%;
-  grid-template-rows: 7fr 5fr 1fr 10fr 8fr;
-  row-gap: 1%;
-  column-gap: 5%; 
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1%; 
   grid-template-areas: 
-    "r11 r12"
-    "r21 r22"
-    "r31 r32" 
-    "r41 r42"
-    "r51 r52";
+    "p1 p2"
 }
-.content .profile{
-  grid-area: r11;
+.profileInfo .profile{
+  grid-area: p1;
 }
-.content .description{
-  grid-area: r12;
+.profileInfo .description{
+  grid-area: p2;
 }
-.content .social-media{
-  grid-area: r21;
+
+
+body .info2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1%; 
+  grid-template-areas: 
+    "in1 in2"
 }
-.content .scroll{
-  grid-area: r22;
+.info2 .social-media{
+  grid-area: in1;
 }
-.content .division11{
-  grid-area: r31;
+.info2 .scroll{
+  grid-area: in2;
 }
-.content .division12{
-  grid-area: r32;
+
+
+body .firstDiv{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1%; 
+  grid-template-areas: 
+    "fd1 fd2"
 }
-.content .fFT{
-  grid-area: r41;
+.firstDiv .division11{
+  grid-area: fd1;
 }
-.content .fFI{
-  grid-area: r42;
+.firstDiv .division12{
+  grid-area: fd2;
 }
-.content .myLocationI{
-  grid-area: r51;
+
+
+body .favFood{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1%; 
+  grid-template-areas: 
+    "ffood1 ffood2"
 }
-.content .myLocationM{
-  grid-area: r52;
+.favFood .fFT{
+  grid-area: ffood1;
 }
+.favFood .fFI{
+  grid-area: ffood2;
+}
+
+
+body .location{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1%; 
+  grid-template-areas: 
+    "l1 l2"
+}
+.location .myLocationI{
+  grid-area: l1;
+}
+.location .myLocationM{
+  grid-area: l2;
+}
+
 
 body .myTable{
   display: grid;
@@ -55,6 +87,8 @@ body .myTable{
 .myTable .myTableI{
   grid-area: t2;
 }
+
+
 
 body .myMusic{
   display: grid;

@@ -77,10 +77,10 @@ h1{
   box-shadow: 0% 50% 50% -25% #ad3500 !important;
   top: 1px !important;
 }
-.profile{
+.profileInfo .profile{
   position: relative;  
 }
-.content #ProfileI{
+.profileInfo #ProfileI{
   width: 45%;
   margin-left: 20%;
 
@@ -218,7 +218,7 @@ caption{
 
 
 #musicIcon{
-  margin-top: 20%; 
+  margin-top: 15%; 
   margin-left: 50%;
   font-size: 1020%;
   color: rgb(255, 141, 41);

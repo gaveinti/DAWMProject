@@ -5,7 +5,7 @@ box-sizing: border-box;
 }
 
 @media only screen and (max-width: 320px) {
-  body .content{
+  body{
   display: grid;
   grid-template-columns: 48%;
   grid-template-rows: 30% 30% 5% 20%;
