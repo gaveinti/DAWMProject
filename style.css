@@ -110,11 +110,12 @@ h1{
 .description #Paint{
   float: right;
   width: 50%;
+  margin-top: 5%;
 }
 .description #descpr{
   position: absolute;
   float: left;
-  padding-right: 20%;
+  padding-right: 25%;
   text-align: left;
   background-color: transparent;
   color: white;
@@ -162,10 +163,9 @@ h1{
 
 
 
-.fFT{
+.favFood .fFT{
   place-self: center;
   margin-top: 2%;
-  border-color: rgb(255, 73, 73);
 }
 .fFT h2{
   color: white;
@@ -173,6 +173,7 @@ h1{
 .fFT ul.fFood{
   color: white;
   font-size: 30px;
+  
 }
 .fFI{
   place-self: center;
@@ -187,7 +188,7 @@ h1{
 
 .myLocationI #mapIcon{
   margin-top: 20%; 
-  margin-left: 50%;
+  margin-left: 40%;
   font-size: 1020%;
   color: rgb(255, 141, 41);
 }
@@ -197,7 +198,10 @@ h1{
   text-align: center;
 }
 .myLocationM .mapouter{
-  margin-left: 20%;
+  margin-left: 15%;
+}
+.myLocationM #locationText{
+  color: rgb(255, 141, 41);
 }
 
 
@@ -206,19 +210,35 @@ table, th, td{
   border-collapse: collapse;
   background-color: white;
 }
+table{
+  width: 80%;
+}
 #Tabla1{
-  margin-left: 30%;
+  margin-left: 15%;
   margin-top: 20%;
 }
 #tableIcon{
   margin-top: 20%;
-  margin-left: 50%; 
+  margin-left: 41%; 
   font-size: 1020%;
   color: rgb(255, 141, 41);
 }
 caption{
-  color: white;
+  color: black;
 }
+#Tabla1 .centro{
+  text-align: center;
+}
+#orangeDark{
+  background-color: rgb(224, 77, 1);
+}
+#orangeMiddle{
+  background-color: #f4b484;
+}
+#orangeLight{
+  background-color: #fce4d4;
+}
+
 
 
 #musicIcon{
@@ -227,15 +247,19 @@ caption{
   font-size: 1020%;
   color: rgb(255, 141, 41);
 }
-
-
-
-#audioC{
-  margin-top: 5%;
-  margin-left: 40%;
-  width: 50%;
-  height: 70%;
+.myMusicA #audioC{
+  margin-left: 30%;
   controls: yes;
+}
+.myMusicA #favSong{
+  color: rgb(255, 141, 41);
+  margin-left: 35%;
+  margin-top: 15%;
+}
+.myMusicA #songsName{
+  color: rgb(224, 77, 1);
+  margin-left: 35%;
+  
 }
 
 
@@ -256,7 +280,6 @@ caption{
   top: -20px !important;
 }
 #factsTitle{
-  
   color: rgb(255, 141, 41);
   font-size: 30px;
   margin-left: 40%;
