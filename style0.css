@@ -81,22 +81,17 @@ body .division2{
 .division2 .line1{
   grid-area: d1;
 }
-.division2 .lin2{
+.division2 .line2{
   grid-area: d2;
 }
 
 
 body .formulario{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1%; 
+  grid-template-columns: 1fr;
   grid-template-areas: 
-    "d1 f2"
+    "f1"
 }
-.division2 .line1{
+.formulario{
   grid-area: d1;
 }
-.division2 .lin2{
-  grid-area: d2;
-}
-

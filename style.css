@@ -241,3 +241,43 @@ caption{
   margin-right: -9.5%;
   color: rgb(255, 141, 41);
 }
+
+
+.formulario{
+  position: relative;
+}
+.formulario *{
+  justify-self: center;
+}
+.formulario .form1 #skills{
+  width: 100%;
+  height: 100%;
+
+}
+.formulario .form1{
+  margin-top: 5%;
+  position: absolute;
+  color: white;
+  font-size: 25px;
+}
+.formulario #fechaN{
+  background-color: rgb(255, 141, 41);
+}
+.formulario #formT{
+  position: absolute;
+  color: rgb(255, 141, 41);
+  font-size: 30px;
+}
+.formulario #skills{
+  background-color: rgb(255, 141, 41);
+}
+.formulario #envioD{
+  background-color: rgb(255, 141, 41);
+  margin-bottom: 5%;
+}
+.formulario #vG{
+  margin-left: 70%;
+  width: 10%;
+  heigth: 15%;
+  transform: rotate(-20deg);
+}
