@@ -5,12 +5,14 @@ box-sizing: border-box;
 }
 
 @media only screen and (max-width: 320px) {
-  body{
   display: grid;
+  grid-template-columns: 100%;
+    
+  
+}
+  /*display: grid;
   grid-template-columns: 48%;
   grid-template-rows: 30% 30% 5% 20%;
-  row-gap: 27px;
-  column-gap: 11px; 
-  }
+  
 
-}
+}*/

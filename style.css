@@ -94,14 +94,12 @@ h1{
   
 }
 #ProfileI #ProfilePic{
-  width: 40%;
+  padding: 40px;
+  width: 100%;
   height: auto;
   border-radius: 20%;
-  position: absolute;
-  margin-top: 10%;
-  margin-left: 50%;
-  box-shadow: 1% 1% 2% #050505
-  background: transparent;
+  box-shadow: 1% 1% 2% #050505;
+  background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/04/aesthetic-anime-wallpaper-full-hd.jpg');
 }
 
 .description{
