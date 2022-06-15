@@ -73,6 +73,9 @@ h1{
   float:right;
 }
 
+/*Estilos de seccion 1*/
+
+/*Columna 1*/
 #ProfileI #ProfilePic:hover{
   box-shadow: 0% 50% 50% -25% #ad3500 !important;
   top: 1px !important;
@@ -93,15 +96,21 @@ h1{
   box-shadow: 5px 5px 5px 5px #2f2465;
   
 }
-#ProfileI #ProfilePic{
-  padding: 40px;
+#ProfileI .profilePicContent #ProfilePic{
+  padding: 50px;
   width: 100%;
   height: auto;
-  border-radius: 20%;
+  border-radius: 40%;
   box-shadow: 1% 1% 2% #050505;
   background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/04/aesthetic-anime-wallpaper-full-hd.jpg');
 }
+#ProfileI .profilePicContent{
+  padding: 50px;
+  padding-top: 10px;
+}
+/************************************************/
 
+/* Columna 2*/
 .description{
   position: relative;
 }
@@ -120,20 +129,26 @@ h1{
   line-height: 25pt;
   font-size: 18px;
 }
+/************************************************/
 
+
+/* Estilos de seccion 2*/
+
+/*Columna 1*/
 .socialI{
   color: #787878;
   transition: color0.2s;
   font-size: 250%;
 }
 .social-media{
-  margin-left: 28%;
+  margin-left: 16%;
 }
 .socialI:hover{
   color:#ff7700;
 }
+/************************************************/
 
-
+/*Columna 2*/
 #codeIcon {
   font-size: 200%;
   margin-top: 5%;
@@ -147,8 +162,10 @@ h1{
   margin-top: 5%;
   margin-right: 14%;
 }
+/************************************************/
 
 
+/*Estilos de seccion 3*/
 #soccerIcon{
   margin-top: -5%;
   font-size: 400%;
@@ -156,11 +173,13 @@ h1{
   margin-right: -9.5%;
   color: rgb(255, 141, 41);
 }
+/************************************************/
 
 
 
 
-
+/* Estilos de seccion 4*/
+/*Columna 1*/
 .favFood .fFT{
   place-self: center;
   margin-top: 2%;
@@ -171,7 +190,9 @@ h1{
 .fFT ul.fFood{
   color: white;
   font-size: 30px;
-  
+/************************************************/
+
+/*Columna 2*/
 }
 .fFI{
   place-self: center;
@@ -182,15 +203,19 @@ h1{
   color: rgb(255, 141, 41);
   
 }
+/************************************************/
 
-
+/*Estilos de seccion 5*/
+/*Columna 1*/
 .myLocationI #mapIcon{
   margin-top: 20%; 
   margin-left: 40%;
   font-size: 1020%;
   color: rgb(255, 141, 41);
 }
+/************************************************/
 
+/*Columna 2*/
 .myLocationM #locationText{
   color: white;
   text-align: center;
@@ -201,8 +226,10 @@ h1{
 .myLocationM #locationText{
   color: rgb(255, 141, 41);
 }
+/************************************************/
 
 
+/*Estilos de seccion 6*/
 table, th, td{
   border: 1px solid black;
   border-collapse: collapse;
@@ -215,17 +242,11 @@ table{
   margin-left: 15%;
   margin-top: 20%;
 }
-#tableIcon{
-  margin-top: 20%;
-  margin-left: 41%; 
-  font-size: 1020%;
-  color: rgb(255, 141, 41);
+#Tabla1 .centro{
+  text-align: center;
 }
 caption{
   color: black;
-}
-#Tabla1 .centro{
-  text-align: center;
 }
 #orangeDark{
   background-color: rgb(224, 77, 1);
@@ -234,17 +255,32 @@ caption{
   background-color: #f4b484;
 }
 #orangeLight{
-  background-color: #fce4d4;
+  background-color: #ffd7bd;
+}
+/************************************************/
+
+/*Columna 2*/
+#tableIcon{
+  margin-top: 20%;
+  margin-left: 41%; 
+  font-size: 1020%;
+  color: rgb(255, 141, 41);
 }
 
+/************************************************/
 
 
+/*Estilos de seccion 7*/
+/*Columna 1*/
 #musicIcon{
   margin-top: 15%; 
   margin-left: 50%;
   font-size: 1020%;
   color: rgb(255, 141, 41);
 }
+/************************************************/
+
+/*Columna 2*/
 .myMusicA #audioC{
   margin-left: 30%;
   controls: yes;
@@ -259,6 +295,7 @@ caption{
   margin-left: 35%;
   
 }
+/************************************************/
 
 
 .curiousFacts .card {

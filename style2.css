@@ -5,9 +5,56 @@ box-sizing: border-box;
 }
 
 @media only screen and (max-width: 320px) {
-  display: grid;
-  grid-template-columns: 100%;
+  /*display: grid;
+  grid-template-columns: 100%;*/
+  
+  body .profileInfo{
+    display: flex;
+    flex-direction: column;
+  }
+  body .profileInfo #ProfileI .profilePicContent{
+    padding:  0;
+  }
+  body .profileInfo #ProfileI .profilePicContent #ProfilePic{
+    background-image: none;
+    padding: 0;
     
+  }
+  body .profileInfo .contDes .description #descpr{
+    position: relative;
+    text-align: center;
+    
+  }
+
+  body .info2{
+    display: flex;
+    flex-direction: column;
+  }
+
+  body .firstDiv{
+    display: flex;
+    flex-direction: column;
+  }
+
+  body .favFood{
+    display: flex;
+    flex-direction: column;
+  }
+
+  body .location{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body .myTable{
+    display: flex;
+    flex-direction: column;
+  }
+
+  body .myMusic{
+    display: flex;
+    flex-direction: column;
+  }
   
 }
   /*display: grid;
