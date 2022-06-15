@@ -298,6 +298,7 @@ caption{
 /************************************************/
 
 
+/*Estilos de seccion 8 (Datos curiosos)*/
 .curiousFacts .card {
   height: 15%;
   width: 50%;
@@ -336,7 +337,7 @@ caption{
 
 
 
-
+/*Estilos de seccion 9 (Division 2)*/
 #xboxIcon{
   margin-top: -5%;
   font-size: 400%;
@@ -345,7 +346,7 @@ caption{
   color: rgb(255, 141, 41);
 }
 
-
+/*Estilos de seccion 10 (Formulario)*/
 .formulario{
   position: relative;
 }
