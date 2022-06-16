@@ -27,6 +27,8 @@ ul.socialMediaList li{
   padding:3%;
   margin-left: 4%;
 }
+
+/* Estilos del header */
 header{
   background-color:rgb(42, 37, 80);
   border: 1pt solid black;
