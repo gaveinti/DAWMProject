@@ -7,12 +7,13 @@ box-sizing: border-box;
 }
 
 @media only screen and (max-width: 320px) {
-  /*display: grid;
-  grid-template-columns: 100%;*/
   
+  /* Seccion 1*/
   body .profileInfo{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 100%;
   }
   body .profileInfo #ProfileI .profilePicContent{
     padding:  0;
@@ -20,6 +21,7 @@ box-sizing: border-box;
   body .profileInfo #ProfileI .profilePicContent #ProfilePic{
     background-image: none;
     padding: 0;
+    margin-left: 20%;
     
   }
   body .profileInfo .contDes .description #descpr{
@@ -27,41 +29,135 @@ box-sizing: border-box;
     text-align: center;
     
   }
+  body #Paint{
+    display: none;
+  }
+  body .description #descpr{
+    padding: 0% 10%;
+  }
+  /***********************************/
 
+
+  
+
+  /* Seccion 2*/ 
   body .info2{
     display: flex;
     flex-direction: column;
   }
+  body .info2 .social-media{
+    margin-left: 0%;
+  }
+  body .info2 .social-media .socialMediaList .sM .socialI:hover{
+  color:#ff7700;
+  }
+  /***********************************/
 
+
+  /* Seccion 3*/
   body .firstDiv{
     display: flex;
     flex-direction: column;
   }
+  /***********************************/
 
+
+
+
+  /* Seccion 4*/
   body .favFood{
     display: flex;
     flex-direction: column;
   }
+  h2{
+    font-size: 20px;
+  }
+  body .favFood .fFT .fFood{
+    font-size: 18px;
+  }
+  /***********************************/
 
+
+
+  /* Seccion 5*/
   body .location{
     display: flex;
     flex-direction: column;
   }
+  body .location .myLocationI #mapIcon{
+    margin-left: 25%;
+  }
   
+  body .myLocationM .mapouter{
+    margin-left: 0%;
+  }
+  body .myLocationM .mapouter .gmap_canvas #gmap_canvas{
+    width: 250px;
+    margin-right: 48%;
+  }
+  /***********************************/
+
+
+
+  /* Seccion 6*/
   body .myTable{
     display: flex;
     flex-direction: column;
   }
+  tr, td{
+    font-size: 10px;
+  }
+  body .myTable .myTableT #Tabla1{
+    margin-top: 20%;
+    margin-left: 6%;
+  }
+  body .myTable .myTableI #tableIcon{
+    margin-left: 25%;
+  }
+  /***********************************/
 
+
+  
+  /* Seccion 7*/
   body .myMusic{
     display: flex;
     flex-direction: column;
   }
-  
-}
-  /*display: grid;
-  grid-template-columns: 48%;
-  grid-template-rows: 30% 30% 5% 20%;
+  body .myMusic .musicI #musicIcon{
+    margin-left: 25%;
+  }
+  body .myMusic .myMusicA #favSong{
+    margin-left: 20%;
+  }
+  body .myMusic .myMusicA #songsName{
+    margin-left: 13%;
+  }
+  body .myMusic .myMusicA #audioC{
+    margin-left: 5%;
+  }
+  /***********************************/
   
 
-}*/
+  
+  /* Seccion 8*/
+  body .curiousFacts{
+    display: block;
+    grid-template-columns: 1fr;
+    column-gap: 1%;
+  }
+  body .curiousFacts .fact1{
+    margin-left: 10%;
+  }
+  /***********************************/
+
+
+  /* Seccion 9*/
+  body .formulario #vG{
+    display: none;
+  }
+  body .formulario #naruto{
+    display: none;
+  }
+  /***********************************/
+  
+}
