@@ -1,289 +1,164 @@
-let cargarDatos = () =>{
+let Api = "https://api.jikan.moe/v4";
+let arregloGeneros = []
+let pagina = 1
+//last_visible_page
+let last_page = 2
 
-    let Api = "https://api.jikan.moe/v4/";
-    let arregloTitulos = []
-    let arregloAnimes
-    var dictAnime = {}
+/*Objeto anime*/
+var AnimeTitleRank = {
+    title: "",
+    rank: 0
+}
 
-    fetch(Api + "top/anime?page=1")
+/* Arreglo de animes a graficar*/
+let animes = []
+
+
+
+function cargarListaMejores(){
+    
+    fetch(Api + "/genres/anime")
         .then(response => response.json())
         .then(data => {
-            arregloAnimes = data.data
+            console.log(data.data)
+            let info = data.data
 
-            console.log(arregloAnimes)
-
-
-            for(let i = 0; i < 10; i ++){
-                let id = arregloAnimes[i].mal_id
-                let title = arregloAnimes[i].title
-                let rank =  arregloAnimes[i].rank
-                let score = arregloAnimes[i].score
-                
-                arregloTitulos[i] = title
-                    
-                let arregloValor = [rank, score]
-                dictAnime[title] = arregloValor
-
-                let plantilla = `<option value="${id}">${title}</option>`
-
-                document.querySelector("div.input-group > select").innerHTML += plantilla
-                 
+            for(let elem of info){
+                if(elem.name == "Action" || elem.name == "Adventure" || elem.name == "Award Winning" || elem.name == "Comedy" || elem.name == "Drama" || elem.name == "Sci-Fi" || elem.name == "Sports" || elem.name == "Mecha" || elem.name == "Music" || elem.name == "Seinen" || elem.name == "Shounen"){
+                    arregloGeneros.push(elem.name)
+                }
             }
+
+            console.log(arregloGeneros)
+
+            console.log("-------------------------------")
+            for(let genero of arregloGeneros){
+                let plantillaG = `<option value="${genero}">${genero}</option>`
+
+                document.querySelector("div.input-group > select").innerHTML += plantillaG
+
+            }
+
+            
             
             
         })
     .catch(console.error);
 
-    console.log("Diccionario de top 10")
-    console.log(dictAnime)
-    console.log("Arreglo de titulos")
-    console.log(arregloTitulos)
-        
-    let seccionGrafico = document.getElementById("#chart-line").getContext("2d");
-    //1) Hacer el boton para que cuando se presione se cree el grafico (De los mejores 10 con su año de estreno y ranking)
-    //2) Comentar el script del grafico que esta en dashboard
-    //3) Poner los datos dinamicos en la tabla y prbar hasta que se muestre luego de presionar el boton
-    /*new Chart(seccionGrafico, {
-        type: "line",
-      data: {
-        labels: ["Buenas", "Tardes", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-            label: "Mobile apps",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#cb0c9f",
-            borderWidth: 3,
-            backgroundColor: gradientStroke1,
-            fill: true,
-            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-            maxBarThickness: 6
 
-          },
-          {
-            label: "Websites",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#3A416F",
-            borderWidth: 3,
-            backgroundColor: gradientStroke2,
-            fill: true,
-            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-            maxBarThickness: 6
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#b2b9bf',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#b2b9bf',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });*/
-
-
-
-
-    /*const selectElement = document.querySelector("div.input-group > select")
+    let seccion = document.querySelector("#ListaAnime")
+    const selectElement = document.querySelector("div.input-group > select")
     selectElement.addEventListener("change", (event) => {
-        fetch(Api + "top/anime?page=1")
-        .then(response => response.json())
-        .then(data => {
-            seccion.innerHTML = ""
 
-            arregloAnimes = data.data
+        let generoSeleccionado = event.target.value
+        //console.log(generoSeleccionado)
 
-            let idSeleccionado = event.target.value
+        //Contador que debe llegar hasta 6 (Se escogeran los 6 animes top del genero seleccionado)
+        let cont = 0
 
-            console.log(idSeleccionado)
+        
+            //Con esto se recorren todas las páginas
+            for(let y = 1; y <= last_page; y ++){
 
-            for(let i = 0; i < 10; i ++){
-                let id = arregloAnimes[i].mal_id
+                console.log("Comienza el fetch")
 
-                if(idSeleccionado == id){
-                    let rank = arregloAnimes[i].rank
-                    let title = arregloAnimes[i].title
-                    let anhoEstreno = arregloAnimes[i].year
-                    let cantEpisodios = arregloAnimes[i].episodes
-                    let sinopsis = arregloAnimes[i].synopsis
+                fetch(`../../Info/anime_Pagina${pagina}.json`)
+                .then(response => response.json())
+                .then(data => {
+                //console.log("Datos: " + JSON.stringify(data.data))
+                console.log("Pagina actual: " + data.pagination.current_page)
 
-                    let plantilla = `<h2>${title}</h2>
+                let arregloAnimes = data.data
+                //console.log(arregloAnimes)
+                //console.log(arregloAnimes.length) Sí me da la cantidad total de animes por pagina
 
-                    <ul>
-                      <li>Puesto en el ranking de mejores animes: ${rank}</li>
-                      <li>Año de estreno: ${anhoEstreno}</li>
-                      <li>Cantidad de episodios: ${cantEpisodios}</li>
-                      <li>Sinopsis: ${sinopsis}</li>
-                    </ul>  `
+                
+                //Recorro todos los animes de la pagina
+                for(let i = 0; i < arregloAnimes.length; i ++){
+                    if(cont < 6){
+                        let anime = arregloAnimes[i]
 
-                    seccion.innerHTML += plantilla
+                        let arregloGeneroAnime = anime.genres
+
+                        //Recorro los generos del anime
+                        for(let g of arregloGeneroAnime){
+                            if(g.name == generoSeleccionado){
+                                //Creo el objeto anime a ser guardado en el arreglo de los que van a estar en la gráfca
+                                let objetoAnime = Object.create(AnimeTitleRank)
+                                objetoAnime.title = anime.title
+                                objetoAnime.rank = anime.rank
+                                animes[cont] = objetoAnime
+                                cont ++
+                            }
+                        }
+                    }
+
                 }
+                
+                })
+
+                pagina ++
+                console.log(pagina)
+
 
             }
 
+            console.log(animes)
+        
 
-        })
-    })*/
-
-
-
+        
+    })
 
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    cargarDatos()
-});
+/*const cargarPorPagina = async(pagina) => {
 
+    await fetch(Api + `/top/anime?page=${pagina}`)
+    .then(response => response.json())
+    .then(data => {
+    console.log("Datos: " + data)
+    console.log("Pagina actual: " + data.pagination.current_page)
 
-/*var ctx2 = document.getElementById("chart-line").getContext("2d");
+    let arregloAnimes = data.data
+    //console.log(arregloAnimes)
+    //console.log(arregloAnimes.length) Sí me da la cantidad total de animes por pagina
 
-    var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
+    
+    //Recorro todos los animes de la pagina
+    for(let i = 0; i < arregloAnimes.length; i ++){
+        if(cont < 6){
+            let anime = arregloAnimes[i]
 
-    gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
+            let arregloGeneroAnime = anime.genres
 
-    var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
-    gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
-
-    new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-            label: "Mobile apps",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#cb0c9f",
-            borderWidth: 3,
-            backgroundColor: gradientStroke1,
-            fill: true,
-            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-            maxBarThickness: 6
-
-          },
-          {
-            label: "Websites",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#3A416F",
-            borderWidth: 3,
-            backgroundColor: gradientStroke2,
-            fill: true,
-            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-            maxBarThickness: 6
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#b2b9bf',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
+            //Recorro los generos del anime
+            for(let g of arregloGeneroAnime){
+                if(g.name == generoSeleccionado && data.pagination.current_page == 2){
+                    //Creo el objeto anime a ser guardado en el arreglo de los que van a estar en la gráfca
+                    let objetoAnime = Object.create(AnimeTitleRank)
+                    objetoAnime.title = anime.title
+                    objetoAnime.rank = anime.rank
+                    animes[cont] = objetoAnime
+                    cont ++
+                }
             }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#b2b9bf',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-*/ 
+        }
+
+    }
+    pagina ++
+    console.log(pagina)
+
+
+    })
+
+
+
+}*/
+
+
+cargarListaMejores();
+
+
+/*
+2. Empezar a hacer el grafico
+*/
