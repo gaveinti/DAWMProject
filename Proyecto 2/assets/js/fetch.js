@@ -2,7 +2,7 @@ let Api = "https://api.jikan.moe/v4";
 let arregloGeneros = []
 let pagina = 1
 //last_visible_page
-let last_page = 2
+let last_page = 10
 
 /*Objeto anime*/
 var AnimeTitleRank = {
