@@ -14,6 +14,14 @@ var AnimeTitleRank = {
 let animes = []
 
 
+/*Dom del grafico*/
+const grafico = document.querySelector("#grafica")
+
+/*Datos del eje x*/
+let ejeX = []
+/*Datos del eje x*/
+let ejeY = []
+
 
 function cargarListaMejores(){
     
@@ -60,13 +68,13 @@ function cargarListaMejores(){
             //Con esto se recorren todas las páginas
             for(let y = 1; y <= last_page; y ++){
 
-                console.log("Comienza el fetch")
+                console.log(`Comienza el fetch en la pagina ${pagina}`)
 
                 fetch(`../../Info/anime_Pagina${pagina}.json`)
                 .then(response => response.json())
                 .then(data => {
                 //console.log("Datos: " + JSON.stringify(data.data))
-                console.log("Pagina actual: " + data.pagination.current_page)
+                //console.log("Pagina actual: " + data.pagination.current_page)
 
                 let arregloAnimes = data.data
                 //console.log(arregloAnimes)
@@ -98,63 +106,29 @@ function cargarListaMejores(){
                 })
 
                 pagina ++
-                console.log(pagina)
+                console.log("Pagina sgt:" + pagina)
 
 
             }
 
             console.log(animes)
+
+            
+            pagina = 1
         
 
+            for(let elem of animes){
+                console.log(elem.title)
+                ejeX.push(elem.title)
+            }
+            console.log(ejeX)
+            console.log(ejeY)
         
     })
-
-}
-
-/*const cargarPorPagina = async(pagina) => {
-
-    await fetch(Api + `/top/anime?page=${pagina}`)
-    .then(response => response.json())
-    .then(data => {
-    console.log("Datos: " + data)
-    console.log("Pagina actual: " + data.pagination.current_page)
-
-    let arregloAnimes = data.data
-    //console.log(arregloAnimes)
-    //console.log(arregloAnimes.length) Sí me da la cantidad total de animes por pagina
 
     
-    //Recorro todos los animes de la pagina
-    for(let i = 0; i < arregloAnimes.length; i ++){
-        if(cont < 6){
-            let anime = arregloAnimes[i]
 
-            let arregloGeneroAnime = anime.genres
-
-            //Recorro los generos del anime
-            for(let g of arregloGeneroAnime){
-                if(g.name == generoSeleccionado && data.pagination.current_page == 2){
-                    //Creo el objeto anime a ser guardado en el arreglo de los que van a estar en la gráfca
-                    let objetoAnime = Object.create(AnimeTitleRank)
-                    objetoAnime.title = anime.title
-                    objetoAnime.rank = anime.rank
-                    animes[cont] = objetoAnime
-                    cont ++
-                }
-            }
-        }
-
-    }
-    pagina ++
-    console.log(pagina)
-
-
-    })
-
-
-
-}*/
-
+}
 
 cargarListaMejores();
 
