@@ -11,24 +11,30 @@ var AnimeTitleRank = {
 }
 
 /* Arreglo de animes a graficar*/
-let animes = []
+let animes = {}
 
 
 /*Dom del grafico*/
 const grafico = document.querySelector("#grafica")
 
 /*Datos del eje x*/
-let ejeX = []
+var ejeX = []
 /*Datos del eje x*/
-let ejeY = []
+var ejeY = []
 
 
-function cargarListaMejores(){
+let myChart
+
+
+
+const cargarListaMejores = async() => {
+
     
-    fetch(Api + "/genres/anime")
+    await fetch(Api + "/genres/anime")
         .then(response => response.json())
         .then(data => {
             console.log(data.data)
+            console.log(data.data[0])
             let info = data.data
 
             for(let elem of info){
@@ -54,7 +60,7 @@ function cargarListaMejores(){
     .catch(console.error);
 
 
-    let seccion = document.querySelector("#ListaAnime")
+    let grafico = document.querySelector("#grafica")
     const selectElement = document.querySelector("div.input-group > select")
     selectElement.addEventListener("change", (event) => {
 
@@ -63,9 +69,10 @@ function cargarListaMejores(){
 
         //Contador que debe llegar hasta 6 (Se escogeran los 6 animes top del genero seleccionado)
         let cont = 0
-
+        var l
         
-            //Con esto se recorren todas las páginas
+        //Con esto se recorren todas las páginas
+        if(cont < 6){
             for(let y = 1; y <= last_page; y ++){
 
                 console.log(`Comienza el fetch en la pagina ${pagina}`)
@@ -80,7 +87,7 @@ function cargarListaMejores(){
                 //console.log(arregloAnimes)
                 //console.log(arregloAnimes.length) Sí me da la cantidad total de animes por pagina
 
-                
+                    
                 //Recorro todos los animes de la pagina
                 for(let i = 0; i < arregloAnimes.length; i ++){
                     if(cont < 6){
@@ -94,35 +101,113 @@ function cargarListaMejores(){
                                 //Creo el objeto anime a ser guardado en el arreglo de los que van a estar en la gráfca
                                 let objetoAnime = Object.create(AnimeTitleRank)
                                 objetoAnime.title = anime.title
+                                ejeX.push(anime.title)
                                 objetoAnime.rank = anime.rank
+                                ejeY[cont] = anime.rank
                                 animes[cont] = objetoAnime
-                                cont ++
+                                cont++
                             }
                         }
                     }
 
                 }
-                
+
+                if(y == 6){
+                    console.log(animes)
+                    console.log(ejeX)
+                    console.log(ejeY)
+                    console.log(cont)
+
+
+                     myChart = new Chart(grafico, {
+                        type: "bar",
+                        data: {
+                          labels: ejeX,
+                          datasets: [{
+                            label: "Rank",
+                            tension: 0.4,
+                            borderWidth: 0,
+                            borderRadius: 4,
+                            borderSkipped: false,
+                            backgroundColor: "#455",
+                            data: ejeY,
+                            maxBarThickness: 6
+                          }, ],
+                        },
+                        options: {
+                          responsive: true,
+                          maintainAspectRatio: false,
+                          plugins: {
+                            legend: {
+                              display: false,
+                            }
+                          },
+                          interaction: {
+                            intersect: false,
+                            mode: 'index',
+                          },
+                          scales: {
+                            y: {
+                              grid: {
+                                drawBorder: false,
+                                display: false,
+                                drawOnChartArea: false,
+                                drawTicks: false,
+                              },
+                              ticks: {
+                                suggestedMin: 0,
+                                suggestedMax: 100,
+                                beginAtZero: true,
+                                padding: 15,
+                                font: {
+                                  size: 14,
+                                  family: "Open Sans",
+                                  style: 'normal',
+                                  lineHeight: 2
+                                },
+                                color: "#654"
+                              },
+                            },
+                            x: {
+                              grid: {
+                                drawBorder: false,
+                                display: false,
+                                drawOnChartArea: false,
+                                drawTicks: false
+                              },
+                              ticks: {
+                                display: false
+                              },
+                            },
+                          },
+                        },
+                    });
+        
+
+
+
+
+                }
+
                 })
 
+                    
                 pagina ++
                 console.log("Pagina sgt:" + pagina)
 
-
             }
+        }
 
-            console.log(animes)
+        pagina = 1
+        ejeX = []
+        ejeY = []
+        myChart.destroy()
 
             
-            pagina = 1
+
+
         
 
-            for(let elem of animes){
-                console.log(elem.title)
-                ejeX.push(elem.title)
-            }
-            console.log(ejeX)
-            console.log(ejeY)
         
     })
 
