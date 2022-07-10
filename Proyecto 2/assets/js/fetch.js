@@ -22,7 +22,7 @@ var ejeX = []
 /*Datos del eje x*/
 var ejeY = []
 
-
+/*Propiedades para grafico*/
 let myChart
 
 
@@ -38,7 +38,7 @@ const cargarListaMejores = async() => {
             let info = data.data
 
             for(let elem of info){
-                if(elem.name == "Action" || elem.name == "Adventure" || elem.name == "Award Winning" || elem.name == "Comedy" || elem.name == "Drama" || elem.name == "Sci-Fi" || elem.name == "Sports" || elem.name == "Mecha" || elem.name == "Music" || elem.name == "Seinen" || elem.name == "Shounen"){
+                if(elem.name == "Action" || elem.name == "Adventure" || elem.name == "Comedy" || elem.name == "Drama" || elem.name == "Sci-Fi" || elem.name == "Sports" ||  elem.name == "Detective" || elem.name == "Shounen" || elem.name == "Seinen" || elem.name == "Music"){
                     arregloGeneros.push(elem.name)
                 }
             }
@@ -70,9 +70,12 @@ const cargarListaMejores = async() => {
         //Contador que debe llegar hasta 6 (Se escogeran los 6 animes top del genero seleccionado)
         let cont = 0
         var l
+
+        //Bandera que verifica si se encontró datos que no sean seinen o shounen
+        let ban = 0
         
         //Con esto se recorren todas las páginas
-        if(cont < 6){
+        if(cont < 10){
             for(let y = 1; y <= last_page; y ++){
 
                 console.log(`Comienza el fetch en la pagina ${pagina}`)
@@ -90,33 +93,62 @@ const cargarListaMejores = async() => {
                     
                 //Recorro todos los animes de la pagina
                 for(let i = 0; i < arregloAnimes.length; i ++){
-                    if(cont < 6){
-                        let anime = arregloAnimes[i]
+                  if(cont < 10){
+                    let anime = arregloAnimes[i]
 
-                        let arregloGeneroAnime = anime.genres
+                    let animeGenerosTotal = []
 
-                        //Recorro los generos del anime
-                        for(let g of arregloGeneroAnime){
-                            if(g.name == generoSeleccionado){
-                                //Creo el objeto anime a ser guardado en el arreglo de los que van a estar en la gráfca
-                                let objetoAnime = Object.create(AnimeTitleRank)
-                                objetoAnime.title = anime.title
-                                ejeX.push(anime.title)
-                                objetoAnime.rank = anime.rank
-                                ejeY[cont] = anime.rank
-                                animes[cont] = objetoAnime
-                                cont++
-                            }
-                        }
+                    let arregloDemographics = anime.demographics
+                    let arregloGeneroAnime = anime.genres
+                    let arregloThemes = anime.themes
+
+                    for(let elem of arregloGeneroAnime){
+                      animeGenerosTotal.push(elem)
                     }
+                    for(let elem of arregloDemographics){
+                      animeGenerosTotal.push(elem)
+                    }
+                    for(let elem of arregloThemes){
+                      animeGenerosTotal.push(elem)
+                    }
+                    console.log(animeGenerosTotal)
+
+
+
+                    //Recorro los generos del anime
+                    for(let g of animeGenerosTotal){
+                      if(g.name == generoSeleccionado){
+                        //Creo el objeto anime a ser guardado en el arreglo de los que van a estar en la gráfca
+                        let objetoAnime = Object.create(AnimeTitleRank)
+                        objetoAnime.title = anime.title
+                        ejeX.push(anime.title)
+                        objetoAnime.rank = anime.rank
+                        ejeY[cont] = anime.rank
+                        animes[cont] = objetoAnime
+                        cont++
+                        ban = 1
+                      }
+                    }
+
+                  }
 
                 }
 
-                if(y == 6){
+                if(y == 10){
                     console.log(animes)
                     console.log(ejeX)
                     console.log(ejeY)
                     console.log(cont)
+
+
+                    var ctx2 = document.getElementById("grafica").getContext("2d");
+
+                    var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
+
+                    gradientStroke2.addColorStop(1, "orange");
+                    gradientStroke2.addColorStop(0.2, "red");
+                    gradientStroke2.addColorStop(0, "black"); //purple colors
+
 
 
                      myChart = new Chart(grafico, {
@@ -129,7 +161,7 @@ const cargarListaMejores = async() => {
                             borderWidth: 0,
                             borderRadius: 4,
                             borderSkipped: false,
-                            backgroundColor: "#455",
+                            backgroundColor: gradientStroke2,
                             data: ejeY,
                             maxBarThickness: 6
                           }, ],
@@ -139,7 +171,7 @@ const cargarListaMejores = async() => {
                           maintainAspectRatio: false,
                           plugins: {
                             legend: {
-                              display: false,
+                              //display: false,
                             }
                           },
                           interaction: {
@@ -182,11 +214,6 @@ const cargarListaMejores = async() => {
                           },
                         },
                     });
-        
-
-
-
-
                 }
 
                 })
@@ -217,7 +244,3 @@ const cargarListaMejores = async() => {
 
 cargarListaMejores();
 
-
-/*
-2. Empezar a hacer el grafico
-*/
