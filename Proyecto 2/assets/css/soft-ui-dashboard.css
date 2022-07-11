@@ -56,6 +56,11 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+div[class="animeIcons"]{
+  display: flex;
+  justify-content: space-between;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
