@@ -14,20 +14,15 @@ img{
     height: auto;
 }
 
-.contenedorTituloNoticias{
+.contenedorTituloInfo{
     display: flex;
     justify-content: center;
 }
-.contenedorTituloNoticias .titulo{
+.contenedorTituloInfo .titulo{
     color:white;
     font-family: 'Lora', serif;
     margin-top: 5%;
     font-size: 50px;
-}
-
-.sectionButton{
-    display: flex;
-    justify-content: center;
 }
 
 button.button {
@@ -50,18 +45,24 @@ button.button {
     color: white;
 }
 
-
-/*Imagenes*/
-.section{
+.futbolBadgeContainer{
     display: flex;
-    flex-direction: column;
-    margin-top: 5%;
+    justify-content: center;
 }
-.noticia{
-    text-align: center;
-    color: white;
+
+.futbolBadgeContainer .futbolBadgeContainer2{
+    width: 50%;
 }
-.containerImg{
-    margin: 0 auto;
-    width: 20%;
+
+.futbolBadgeContainer #MilanContainer{
+    width: 34%;
+}
+
+.futbolBadgeContainer #EmelecContainer{
+    width: 43%;
+}
+
+.containerButton{
+    display: flex;
+    justify-content: center;
 }

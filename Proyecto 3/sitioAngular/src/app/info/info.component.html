@@ -31,6 +31,9 @@
 
   <!-- Main Stylesheet -->
   <link href="./info.component.css" rel="stylesheet">
+
+  <!-- Own Stylesheet-->
+  <link href="./info.component2.css" rel="stylesheet">
   
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -41,87 +44,90 @@
 <body>
   
 
-
-<h1>¿Cúal equipo te gustaría conocer más?</h1>
-
+<div class="contenedorTituloInfo">
+  <h1 class="titulo">¿Cúal equipo te gustaría conocer más?</h1>
+</div>
 
 <!-- service -->
 <section class="section">
   <div class="container">
     <div class="row">
+
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
           <div class="card-body text-center">
-            <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-palette mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-palette"></i>
+            <div class="position-relative futbolBadgeContainer">
+              <div class="futbolBadgeContainer2">
+                <img src="https://assets.stickpng.com/images/584a9b3bb080d7616d298777.png">
+              </div>
             </div>
-            <h4 class="mb-4">Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">FC Barcelona</h4>
+            <button class="button" routerLink="/equipo">Ver Detalles</button>
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
           <div class="card-body text-center">
-            <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-dashboard mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-dashboard"></i>
+            <div class="position-relative futbolBadgeContainer">
+              <div class="futbolBadgeContainer2">
+                <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c4e7.png">
+              </div>
             </div>
-            <h4 class="mb-4">Development</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">Manchester United</h4>
+            <button class="button">Ver Detalles</button>
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
           <div class="card-body text-center">
-            <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-announcement mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-announcement"></i>
+            <div class="position-relative futbolBadgeContainer">
+              <div class="futbolBadgeContainer2" id="MilanContainer">
+                <img src="https://logodownload.org/wp-content/uploads/2016/09/ac-milan-logo-2.png">
+              </div>
             </div>
-            <h4 class="mb-4">Marketing</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">AC Milan</h4>
+            <button class="button">Ver Detalles</button>
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
           <div class="card-body text-center">
-            <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-game mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-game"></i>
+            <div class="position-relative futbolBadgeContainer">
+              <div class="futbolBadgeContainer2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bayern_M%C3%BCnchen_Logo_%281996-2002%29.svg/800px-Bayern_M%C3%BCnchen_Logo_%281996-2002%29.svg.png">
+              </div>
             </div>
-            <h4 class="mb-4">Apps</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">FC Bayern Munchen</h4>
+            <button class="button">Ver Detalles</button>
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card hover-bg-secondary shadow py-4">
           <div class="card-body text-center">
-            <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-crown mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-crown"></i>
+            <div class="position-relative futbolBadgeContainer">
+              <div class="futbolBadgeContainer2" id="EmelecContainer">
+                <img src="https://logodownload.org/wp-content/uploads/2018/04/emelec-logo-escudo-1.png">
+              </div>
             </div>
-            <h4 class="mb-4">Branding</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+            <h4 class="mb-4">Emelec</h4>
+            <button class="button">Ver Detalles</button>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card hover-bg-secondary shadow py-4">
-          <div class="card-body text-center">
-            <div class="position-relative">
-              <i class="icon-lg icon-box bg-gradient-primary rounded-circle ti-bar-chart mb-5 d-inline-block text-white"></i>
-              <i class="icon-lg icon-watermark text-white ti-bar-chart"></i>
-            </div>
-            <h4 class="mb-4">Analytics</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
-          </div>
-        </div>
-      </div>
+
     </div>
+  </div>
+
+  <div class="containerButton">
+    <button class="button" routerLink="/news">Noticias</button>
   </div>
 </section>
 

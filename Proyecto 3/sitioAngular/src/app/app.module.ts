@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioComponent } from './inicio/inicio.component';
-import { MainComponent } from './main/main.component';
+import { EquipoComponent } from './equipo/equipo.component';
 import { NewsComponent } from './news/news.component';
 import { InfoComponent } from './info/info.component';
 
@@ -13,7 +13,7 @@ import { InfoComponent } from './info/info.component';
   declarations: [
     AppComponent,
     InicioComponent,
-    MainComponent,
+    EquipoComponent,
     NewsComponent,
     InfoComponent
   ],

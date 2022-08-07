@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Mulish:wght@300&family=Roboto+Condensed:wght@300&family=Secular+One&display=swap');
+
 
 
 html,body{
@@ -14,20 +14,38 @@ img{
     height: auto;
 }
 
-.contenedorTituloNoticias{
+
+
+
+
+
+.futbolBadgeContainer{
     display: flex;
     justify-content: center;
-}
-.contenedorTituloNoticias .titulo{
-    color:white;
-    font-family: 'Lora', serif;
-    margin-top: 5%;
-    font-size: 50px;
 }
 
-.sectionButton{
-    display: flex;
-    justify-content: center;
+.futbolBadgeContainer .futbolBadgeContainer2{
+    width: 20%;
+}
+
+/*Estilos del listado de opciones*/
+.input-group #selectOption{
+    width: 70%;
+    height: 100%;
+    padding: 10px;
+    background-color: #edf2ff;
+    border: none;
+    margin: 3%;
+}
+
+#ListaAnime{
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+
+}
+
+h2{
+    color: rgb(24, 20, 255);
 }
 
 button.button {
@@ -43,25 +61,4 @@ button.button {
     background-origin: border-box;
     background-clip: content-box, border-box;
     box-shadow: 2px 1000px 1px rgb(0, 0, 0) inset;
-}
-  
-  button.button:hover {
-    box-shadow: none;
-    color: white;
-}
-
-
-/*Imagenes*/
-.section{
-    display: flex;
-    flex-direction: column;
-    margin-top: 5%;
-}
-.noticia{
-    text-align: center;
-    color: white;
-}
-.containerImg{
-    margin: 0 auto;
-    width: 20%;
 }
