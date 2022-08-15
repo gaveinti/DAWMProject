@@ -1,0 +1,54 @@
+{
+    "model": {
+        "type": "Object",
+        "value": {
+
+            "id": {
+                "type": "incrementNumber",
+                "options": {
+                    "from": 1001
+                }
+            },
+
+            "nombre": {
+                "type": "faker",
+                "value": "name.firstName"
+            },
+
+            "fechaNacimiento": {
+                "type": "prepend",
+                "options": {
+                    "text": "#"
+                },
+                "value": {
+                    "type": "date.between",
+                    "options": ["1990-01-01", "2005-12-31"]
+                }
+            },
+
+            "edad": {
+                "type": "randomNumberBetween",
+                "value": [17, 32]
+            },
+
+            "numeroDorsal": {
+                "type": "randomNumberBetweenWithString",
+                "value": [1, 99],
+                "options": {
+                    "prefix": "#"
+                }
+            },
+
+            "equiposAnteriores": {
+                "type": "Array",
+                "options": {
+                    "size": 3
+                },
+                "value": {
+                    "type": "faker",
+                    "value": "address.city"
+                }
+            }
+        }
+    }
+}
