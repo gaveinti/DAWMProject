@@ -16,14 +16,9 @@
             },
 
             "fechaNacimiento": {
-                "type": "prepend",
-                "options": {
-                    "text": "#"
-                },
-                "value": {
-                    "type": "date.between",
-                    "options": ["1990-01-01", "2005-12-31"]
-                }
+                "type": "faker",
+                "value": "date.between",
+                "options": ["1990-01-01", "2005-12-31"]
             },
 
             "edad": {
@@ -40,14 +35,8 @@
             },
 
             "equiposAnteriores": {
-                "type": "Array",
-                "options": {
-                    "size": 3
-                },
-                "value": {
-                    "type": "faker",
-                    "value": "address.city"
-                }
+                "type": "randomElementInArray",
+                "value": ["Barsa", "Madrid", "Milan", "Bayern Munchen", "Emelec"]
             }
         }
     }
