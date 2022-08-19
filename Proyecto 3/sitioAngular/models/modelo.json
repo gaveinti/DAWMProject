@@ -34,7 +34,7 @@
                 }
             },
 
-            "equiposAnteriores": {
+            "equipoAnterior": {
                 "type": "randomElementInArray",
                 "value": ["Barsa", "Madrid", "Milan", "Bayern Munchen", "Emelec"]
             }
