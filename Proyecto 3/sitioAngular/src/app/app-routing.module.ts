@@ -12,7 +12,7 @@ import { NewsComponent } from './news/news.component';
 const routes: Routes = [
   { path: "inicio", component: InicioComponent },
   { path: "info", component: InfoComponent },
-  { path: "equipo", component: EquipoComponent },
+  { path: "equipo/:id", component: EquipoComponent },
   { path: "news", component: NewsComponent },
   { path: "**", redirectTo: "inicio" }
 ];

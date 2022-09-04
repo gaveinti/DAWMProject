@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Equipo } from '../interfaz/equipo';
+import { InfoequipoService } from '../servicios/infoequipo.service';
+import { Router } from '@angular/router';
+import { SharedService } from '../servicios/shared.service';
 
 @Component({
   selector: 'app-info',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  id: any;
+  arregloEquipos: Equipo[] = [];
+  displayedColumns: string[] = ['id', 'nombre'];
+
+  constructor(private infoServicio: InfoequipoService, private router: Router, private servicioCompartido: SharedService) {
+    this.infoServicio.obtenerDatosEquipos().subscribe(respuesta => {
+      this.arregloEquipos = respuesta as any
+    })
+    this.servicioCompartido.setId(this.id)
+  }
+
+  route(){
+    this.router.navigate(['/equipo'], {queryParams: {id: this.id}});
+  }
+
+  
 
   ngOnInit(): void {
+    /*this.servicioCompartido.setId(this.id)*/
   }
 
 }

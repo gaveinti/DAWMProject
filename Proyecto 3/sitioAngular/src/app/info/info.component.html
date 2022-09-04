@@ -48,7 +48,7 @@
   <h1 class="titulo">¿Cúal equipo te gustaría conocer más?</h1>
 </div>
 
-<!-- service -->
+<!-- service 
 <section class="section">
   <div class="container">
     <div class="row">
@@ -130,6 +130,34 @@
     <button class="button" routerLink="/news">Noticias</button>
   </div>
 </section>
+--->
+<section class="section">
+  <div class="container">
+    <div class="row" *ngFor="let team of arregloEquipos">
+
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card hover-bg-secondary shadow py-4">
+          <div class="card-body text-center">
+            <div class="position-relative futbolBadgeContainer">
+              <div class="futbolBadgeContainer2" id="EmelecContainer">
+                <img src="{{team.pais}}">
+              </div>
+              <h1>{{team.id}}</h1>
+            </div>
+            <h4 class="mb-4">{{team.nombre}}</h4>
+            <button class="button" routerLink="/equipo/{{team.id}}">Ver Detalles {{team.id}}</button>
+          </div>
+        </div>
+      </div>  
+
+    </div>
+  </div>
+
+  <div class="containerButton">
+    <button class="button" routerLink="/news">Noticias</button>
+  </div>
+</section>
+
 
 <!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>

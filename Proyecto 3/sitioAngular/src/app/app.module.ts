@@ -8,6 +8,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { EquipoComponent } from './equipo/equipo.component';
 import { NewsComponent } from './news/news.component';
 import { InfoComponent } from './info/info.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { InfoComponent } from './info/info.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
