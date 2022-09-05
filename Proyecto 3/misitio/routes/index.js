@@ -2,6 +2,7 @@ var express = require('express');
 const equipos = require('../models/equipos.js');
 const equipo = require('../models/equipo').equipo;
 var router = express.Router();
+var apiRoutes = require('../routes/api')
 
 const Sequelize = require('sequelize');
 const sequelize = require('../models/index.js').sequelize;
@@ -51,3 +52,6 @@ router.get('/info', function(req, res, next) {
   .catch(error => res.status(400).send(error))
 
 })
+
+router.use(apiRoutes)
+

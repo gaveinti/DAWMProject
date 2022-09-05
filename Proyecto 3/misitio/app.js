@@ -1,6 +1,20 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+/*
+bodyParser = require("body-parser"),
+swaggerJsdoc = require("swagger-jsdoc"),
+swaggerUi = require("swagger-ui-express");
+var swaggerDocument = require('./swagger.json');
+*/
+var swaggerUI = require('swagger-ui-express');
+var swaggerDocument = require('./swagger.json');
+var swaggerOptions = {
+    explorer: true,
+};
+
+
+
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -13,11 +27,16 @@ var app = express();
 
 var cors = require('cors')
 
+/*var port = 3000*/
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(cors())
+
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument, swaggerOptions));
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -28,7 +47,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
-
+/*
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+  swaggerDocs(app, port)
+})
+*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
