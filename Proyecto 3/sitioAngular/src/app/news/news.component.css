@@ -7,6 +7,8 @@ html,body{
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 img{
@@ -60,8 +62,41 @@ button.button {
 .noticia{
     text-align: center;
     color: white;
+    width: 100%;
+    display: block;
+    
 }
 .containerImg{
     margin: 0 auto;
     width: 20%;
 }
+
+.containerImg img{
+    object-fit: cover;
+    box-shadow: 10px 15px 25px 0 rgba(0,0,0,.2);
+    display: block;
+    transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    margin-top: -10px;
+}
+
+.containerImg:hover img{
+    box-shadow: 1px 1px 10px 0 #fc27c6f3;
+}
+
+.hover {
+    --b: 0.1em;   /* the thickness of the line */
+    --c: #f033e6; /* the color */
+    
+    color: rgba(253, 253, 253, 0.938);
+    padding-block: var(--b);
+    background: 
+      linear-gradient(var(--c) 50%,rgb(35, 73, 245) 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  }
+  .hover:hover {
+    --_p: 100%;
+    --_s: .3s;
+  }

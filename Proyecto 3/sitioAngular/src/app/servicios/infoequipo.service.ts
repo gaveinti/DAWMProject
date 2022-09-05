@@ -12,4 +12,8 @@ export class InfoequipoService {
   obtenerDatosEquipos() {
     return this.http.get('http://localhost:3000/api/equipos')
   }
+
+  obtenerDatosJugadores(){
+    return this.http.get('http://localhost:3000/api/jugadores')
+  }
 }

@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../servicios/shared.service';
 import { InfoJugadorBDNRService } from '../servicios/info-jugador-bdnr.service';
 import { JugadorDeEquipo } from '../interfaz/jugador-de-equipo';
+import { JugadorDeEquipoBDR } from '../interfaz/jugador-de-equipo-bdr';
+import { InfoequipoService } from '../servicios/infoequipo.service';
 
 
 @Component({
@@ -21,11 +23,18 @@ export class EquipoComponent implements OnInit {
   nombreJ: string | undefined;
   numeroDorsal: BigInteger | undefined;
 
-  constructor(private activatedroute: ActivatedRoute, private servicioCompartido: SharedService, private servicioInfoJu: InfoJugadorBDNRService) {
+  arregloJugadoresBDR: JugadorDeEquipoBDR[] = [];
+
+
+  constructor(private activatedroute: ActivatedRoute, private serviceInfoEquipo: InfoequipoService,private servicioCompartido: SharedService, private servicioInfoJu: InfoJugadorBDNRService) {
     /*this.activatedroute.queryParams.subscribe(data => {
       console.log(data);
     })
     this.id = this.servicioCompartido.getId()*/
+    this.serviceInfoEquipo.obtenerDatosJugadores().subscribe(respuesta => {
+      this.arregloJugadoresBDR = respuesta as any
+      console.log(this.arregloJugadoresBDR)
+    })
 
 
     servicioInfoJu.obtenerDatos().subscribe(respuesta => {
@@ -46,21 +55,29 @@ export class EquipoComponent implements OnInit {
           let idPresentar = jugador.id
           let nombrePresentar = jugador.nombre
           let numeroDorsalPresentar = jugador.numeroDorsal
+          let marcaP
+
+          for(let jugadorBDR of this.arregloJugadoresBDR){
+            if(idPresentar == jugadorBDR.id){
+              marcaP = jugadorBDR.marcaPatrocinadora
+            }
+          }
 
           let plantilla = `
           <mat-card class="cartaFondo">
             <mat-card-title>Información de jugador</mat-card-title>
             <mat-card-subtitle></mat-card-subtitle>
-            <p>Edad: ${edadPresentar}</p>
-            <p>Equipo: ${equipoAnteriorPresentar}</p>
-            <p>Fecha de nacimiento: ${fechaNacimientoPresentar}</p>
-            <p>Id de jugador: ${idPresentar}</p>
-            <p>Nombre: ${nombrePresentar}</p>
-            <p>Dorsal: ${numeroDorsalPresentar}</p>
-            <mat-card-actions>
-              <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button>
-            </mat-card-actions>
+            <mat-card-content>
+              <p>Edad: ${edadPresentar}</p>
+              <p>Equipo: ${equipoAnteriorPresentar}</p>
+              <p>Fecha de nacimiento: ${fechaNacimientoPresentar}</p>
+              <p>Id de jugador: ${idPresentar}</p>
+              <p>Nombre: ${nombrePresentar}</p>
+              <p>Dorsal: ${numeroDorsalPresentar}</p>
+            </mat-card-content>
+            <mat-card-footer>
+              <h2>Marca Patrocinadora: ${marcaP}</h2>
+            </mat-card-footer>
           </mat-card>
           `
           seccion!.innerHTML += plantilla

@@ -99,11 +99,27 @@ body .section .containerCartas .containerCartas2 .cartaFondo{
 ::ng-deep .cartaFondo{
     max-width: 500px;
     margin:4px;
-    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    /*background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);*/
+    /* From https://css.glass */
+    /* From https://css.glass */
+    background: rgba(255, 41, 241, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.4px);
+    -webkit-backdrop-filter: blur(9.4px);
+    border: 1px solid rgba(255, 41, 241, 0.05);
 
 }
 
 ::ng-deep mat-card-title{
     color:#edf2ff;
     font-size: 40px;
+}
+
+::ng-deep mat-card-content{
+    color:#08AEEA
+}
+
+::ng-deep mat-card-footer{
+    color:#f730f0
 }
