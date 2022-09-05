@@ -3,10 +3,13 @@
 
 
 html,body{
-    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
+    background-color: #2B86C5;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 img{
@@ -61,4 +64,46 @@ button.button {
     background-origin: border-box;
     background-clip: content-box, border-box;
     box-shadow: 2px 1000px 1px rgb(0, 0, 0) inset;
+}
+
+/*Carta*/
+body .section .containerCartas .containerCartas2 .cartaFondo{
+    background-color: #ff48fa;
+}
+
+.containerName1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 2px;
+    height: 60%;
+}
+
+.titulo{
+    font-size: 400px!;
+    background: -webkit-linear-gradient(#eee, rgb(236, 27, 219));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+::ng-deep .mat-card{
+    background-color: #ff48fa;
+}
+
+
+.containerName1 .containerName .titulo{
+    margin-top: 5px;
+}
+
+::ng-deep .cartaFondo{
+    max-width: 500px;
+    margin:4px;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+}
+
+::ng-deep mat-card-title{
+    color:#edf2ff;
+    font-size: 40px;
 }

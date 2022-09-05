@@ -5,7 +5,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  id: BehaviorSubject<number> | undefined;
+  id: BehaviorSubject<string> | undefined;
+  url: BehaviorSubject<string> | undefined;
   constructor() { 
     /*this.id = new BehaviorSubject()*/
   }
@@ -15,5 +16,12 @@ export class SharedService {
   }
   getId(){
     return this.id;
+  }
+
+  setUrl(data: any){
+    this.url = data
+  }
+  getUrl(){
+    return this.url
   }
 }

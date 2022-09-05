@@ -12,6 +12,7 @@ import { SharedService } from '../servicios/shared.service';
 export class InfoComponent implements OnInit {
 
   id: any;
+  url: any;
   arregloEquipos: Equipo[] = [];
   displayedColumns: string[] = ['id', 'nombre'];
 
@@ -20,10 +21,11 @@ export class InfoComponent implements OnInit {
       this.arregloEquipos = respuesta as any
     })
     this.servicioCompartido.setId(this.id)
+    this.servicioCompartido.setUrl(this.url)
   }
 
   route(){
-    this.router.navigate(['/equipo'], {queryParams: {id: this.id}});
+    this.router.navigate(['/equipo'], {queryParams: {id: this.id, url: this.url}});
   }
 
   
